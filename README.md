@@ -35,6 +35,14 @@ Qwen3.8-27B/
 
 如果把 `llama-server.exe` 放在 `Qwen3.8-Tray.exe` 同目录，也可以直接启动；它依赖的 DLL 需要放在同目录或系统可搜索路径中。
 
+当前参数样例使用的模型文件名为：
+
+- 主模型：`Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-NVFP4-mixed.gguf`
+- MTP 草稿模型：`Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-FastMTP-32K.gguf`
+- 多模态投影模型：`mmproj-Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-BF16.gguf`
+
+这三个文件需要放在 `Qwen3.8-Tray.exe` 同目录；如果更换模型，可以同步修改 `llama-server.args` 中对应的参数。
+
 ## 使用外部启动参数 / External Arguments
 
 仓库和 Release 包中的 [llama-server.args](llama-server.args) 是当前运行参数样例。复制或编辑它后，重启托盘启动器即可生效，不需要重新编译。外部文件存在时会完全替代内置参数；删除或移走该文件后会回退到内置参数。
@@ -49,8 +57,10 @@ Qwen3.8-27B/
 例如：
 
 ```text
---model "{BASE_DIR}\my-model.gguf"
---ctx-size 32768
+--model "{BASE_DIR}\Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-NVFP4-mixed.gguf"
+--spec-draft-model "{BASE_DIR}\Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-FastMTP-32K.gguf"
+--mmproj "{BASE_DIR}\mmproj-Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-BF16.gguf"
+--n-predict 24576
 --host 127.0.0.1
 --port 1234
 ```
