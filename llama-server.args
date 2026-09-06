@@ -1,0 +1,38 @@
+# Qwen3.8-27B llama-server 启动参数
+# 每行可以写一个或多个参数；双引号/单引号可用于包含空格。
+# 空行以及以 # 或 ; 开头的内容会被忽略。
+# {BASE_DIR} 会自动替换为 Qwen3.8-Tray.exe 所在目录。
+# 删除本文件后，启动器会自动回退到内置参数。
+
+-lv 3
+--model "{BASE_DIR}\Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-NVFP4-mixed.gguf"
+--spec-draft-model "{BASE_DIR}\Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-FastMTP-32K.gguf"
+--spec-draft-ngl all
+--spec-type draft-mtp
+--spec-draft-n-max 3
+--spec-draft-p-min 0
+--mmproj "{BASE_DIR}\mmproj-Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-BF16.gguf"
+--image-min-tokens 1024
+--reasoning-preserve
+--reasoning-effort medium
+--reasoning-format deepseek
+--reasoning-budget 12288
+--n-predict 24576
+--jinja
+--no-mmap
+-ngl all
+-c 131072
+--parallel 1
+--batch-size 2048
+--ubatch-size 512
+--flash-attn on
+--cache-type-k q8_0
+--cache-type-v q8_0
+--temp 1
+--top-p 0.95
+--top-k 20
+--min-p 0
+--repeat-penalty 1.0
+--presence-penalty 0
+--host 127.0.0.1
+--port 1234

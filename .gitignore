@@ -1,0 +1,30 @@
+# Visual Studio / .NET build output
+.vs/
+**/bin/
+**/obj/
+tray-launcher/release/
+tray-launcher/publish/
+
+# Local release staging
+dist/
+
+# Runtime logs and backups
+*.log
+*.log.*
+qwen3.8-tray.log.previous
+
+# Local executable/runtime copies; upload these as GitHub Release assets instead
+Qwen3.8-Tray.exe
+llama-server/
+llama-server.exe
+*.dll
+
+# Large model files are not source-controlled
+*.gguf
+
+# IDE and OS metadata
+.idea/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
