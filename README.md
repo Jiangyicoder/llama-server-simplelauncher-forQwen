@@ -86,6 +86,10 @@ dotnet publish tray-launcher/Qwen3.8-Tray.csproj -c Release -r win-x64 --self-co
 
 发布输出会包含 `Qwen3.8-Tray.exe` 和 `llama-server.args`。`SelfContained=false` 表示目标机器需要安装 .NET 8 Desktop Runtime。
 
+## 开发维护 / Development
+
+后续修改入口、启动流程、参数回退规则和发布检查清单见 [DEVELOPMENT.md](DEVELOPMENT.md)。项目级代码协作约定见 [AGENTS.md](AGENTS.md)。
+
 ## GitHub Release 建议 / Release Contents
 
 建议将以下文件作为 GitHub Release 资产上传：
